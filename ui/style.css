@@ -1,0 +1,181 @@
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+html, body {
+    width: 100%; height: 100%;
+    font-family: 'Segoe UI', 'Consolas', 'Courier New', monospace;
+    background: transparent;
+    color: #e6edf3;
+    overflow: hidden;
+    user-select: none;
+    font-size: 14px;
+}
+
+#app {
+    display: none;
+    width: 680px;
+    margin: 28px auto;
+    flex-direction: column;
+    background: linear-gradient(180deg, #0d1117 0%, #0a0e14 100%);
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.8);
+    overflow: hidden;
+}
+#app.visible { display: flex; }
+
+.topbar {
+    display: flex; align-items: center; gap: 8px;
+    padding: 12px 18px; background: linear-gradient(90deg, #161b22 0%, #1a2030 100%);
+    border-bottom: 1px solid #30363d; font-size: 13px;
+}
+.topbar-title { color: #58a6ff; font-weight: 700; letter-spacing: 0.8px; font-size: 14px; white-space: nowrap; }
+.topbar-sep { color: #21262d; }
+.topbar-label { color: #8b949e; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
+.topbar-val { color: #58a6ff; font-weight: 700; min-width: 48px; text-align: center; font-size: 13px; }
+.topbar-btn {
+    background: #21262d; border: 1px solid #30363d; color: #c9d1d9;
+    padding: 5px 12px; cursor: pointer; font-family: inherit;
+    font-size: 11px; font-weight: 600; border-radius: 4px;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+    white-space: nowrap;
+}
+.topbar-btn:hover { background: #30363d; }
+.topbar-btn.close { margin-left: auto; color: #f85149; border-color: #f85149; }
+.topbar-btn.close:hover { background: #f85149; color: #fff; }
+.topbar-btn.small { padding: 5px 10px; font-size: 10px; }
+.topbar-slider {
+    -webkit-appearance: none; appearance: none; width: 80px; height: 4px;
+    background: #21262d; border-radius: 2px; outline: none; cursor: pointer;
+}
+.topbar-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none; width: 14px; height: 14px;
+    border-radius: 3px; background: #58a6ff; cursor: pointer; border: none;
+}
+.topbar-slider.hour-slider { width: 72px; }
+.topbar-slider.minute-slider { width: 60px; }
+
+.weather-section {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.weather-current {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 24px;
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 10px;
+}
+.weather-current-icon {
+    width: 56px; height: 56px;
+    flex-shrink: 0;
+}
+.weather-current-icon svg {
+    width: 100%; height: 100%;
+}
+.weather-current-info { flex: 1; }
+.weather-current-label {
+    font-size: 10px;
+    color: #8b949e;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 2px;
+}
+.weather-current-value {
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+.weather-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+}
+.weather-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 4px;
+    font-size: 9px;
+    font-family: inherit;
+    background: #161b22;
+    border: 1px solid #21262d;
+    color: #8b949e;
+    cursor: pointer;
+    border-radius: 6px;
+    text-align: center;
+    transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.1s;
+    font-weight: 500;
+}
+.weather-btn:hover {
+    background: #1c2333;
+    border-color: #30363d;
+    color: #c9d1d9;
+    transform: translateY(-1px);
+}
+.weather-btn:active {
+    transform: translateY(0);
+}
+.weather-btn svg {
+    width: 22px; height: 22px;
+    flex-shrink: 0;
+}
+.weather-btn-label {
+    line-height: 1.1;
+    letter-spacing: 0.3px;
+}
+
+.bottom-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    background: #161b22;
+    border-top: 1px solid #30363d;
+}
+.pending-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #21262d;
+    transition: background 0.2s;
+    flex-shrink: 0;
+}
+.pending-dot.active { background: #f0883e; }
+.pending-text {
+    flex: 1;
+    font-size: 10px;
+    color: #484f58;
+    transition: color 0.2s;
+}
+.pending-text.active { color: #f0883e; }
+.bottom-btn {
+    padding: 7px 16px;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+    letter-spacing: 0.5px;
+}
+.bottom-btn.primary {
+    background: #238636;
+    border: 1px solid #2ea043;
+    color: #fff;
+}
+.bottom-btn.primary:hover { background: #2ea043; }
+.bottom-btn {
+    background: #21262d;
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+}
+.bottom-btn:hover { background: #30363d; }
