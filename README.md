@@ -63,8 +63,6 @@ exports['HELIOS-timeweather']:GetWeather()
 
 ## Dependencies
 
-- **FXServer** (cerulean) with **Lua 5.4**
-- **gta5** runtime
 - Optional: `es_extended` or `qb-core` for group-based access control
 
 ## Support
