@@ -67,6 +67,6 @@ exports['HELIOS-timeweather']:GetWeather()
 
 ## Support
 
-- [Tebex Store](https://helios-dev.tebex.io)
-- [Support Discord](https://discord.gg/bpk2z3RHVQ)
+- [Tebex Store](https://saturnix.tebex.io/category/scripts)
+- [Support Discord](https://discord.gg/sMAFpNjBxH)
 - [Partnered Hosting](https://heliosnode.nl)
