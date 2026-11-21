@@ -1,6 +1,7 @@
 # HELIOS Time & Weather
 
 Global time & weather management system for FiveM with a built-in NUI admin dashboard.
+PLEASE NOTE: i made this script with AI for a tiktok/youtube video.
 
 ## Features
 
